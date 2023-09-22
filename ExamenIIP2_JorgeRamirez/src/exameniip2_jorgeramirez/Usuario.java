@@ -4,11 +4,13 @@
  */
 package exameniip2_jorgeramirez;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jorge Ramirez
  */
-public class Usuario {
+public class Usuario implements Serializable {
     
     String user;
     String contraseña;
