@@ -401,27 +401,30 @@ public class Mian extends javax.swing.JFrame {
 
     private void BotonCrearClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCrearClienteMouseClicked
         // TODO add your handling code here:
-        String user = Usuariotxt1Cliente.getText();
+        String username = Usuariotxt1Cliente.getText();
         String password = contraseñafield1Cliente.getText();
-        int edad = (Integer) SpinnerEdad1Cliente.getValue();
-        if (edad > 12) {
-            Cliente cliente = new Cliente(user, password, edad);
+        int age = (Integer) SpinnerEdad1Cliente.getValue();
+
+        if (age > 12) {
+            Cliente cliente = new Cliente(username, password, age);
             clientes.add(cliente);
 
             try {
-                File Archivo = new File("./Usuarios.MamboKingz");
-                FileOutputStream fr = new FileOutputStream(Archivo);
-                ObjectOutputStream bw = new ObjectOutputStream(fr);
+                File archivo = new File("./Usuarios.MamboKingz");
+                FileOutputStream fileOutputStream = new FileOutputStream(archivo);
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
                 for (Cliente c : clientes) {
-                    bw.writeObject(cliente);
+                    objectOutputStream.writeObject(c);
                 }
-                JOptionPane.showMessageDialog(this, "Cliente creado con exito");
+
+                objectOutputStream.close();
+                JOptionPane.showMessageDialog(this, "Cliente creado con éxito");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-            JOptionPane.showMessageDialog(this, "No tienes la edad para ser un cliente, lo siento");
+            JOptionPane.showMessageDialog(this, "Lo siento, no tienes la edad suficiente para ser un cliente.");
         }
 
 

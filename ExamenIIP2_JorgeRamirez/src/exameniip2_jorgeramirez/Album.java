@@ -18,6 +18,11 @@ public class Album extends Lanzamiento {
     public Album() {
     }
 
+    public Album(String Titulo, String fecha_publi, int conteoLikes) {
+        super(Titulo, fecha_publi, conteoLikes);
+    }
+    
+    
     public Album(int Cantidadcanciones) {
         this.Cantidadcanciones = Cantidadcanciones;
     }

@@ -4,6 +4,8 @@
  */
 package exameniip2_jorgeramirez;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jorge Ramirez
@@ -32,7 +34,11 @@ public class ArtistaJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        FechaLanzamiento = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        tituloLanzamiento = new javax.swing.JTextField();
+        BotonSingle = new javax.swing.JRadioButton();
+        BotonAlbum = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -46,14 +52,27 @@ public class ArtistaJFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Escriba el numero del artista que desea eliminar");
+        jLabel1.setText("TITULO DE LANZAMIENTO");
 
-        jToggleButton2.setText("ELIMINAR");
+        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jToggleButton2.setText("CREAR");
+        jToggleButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton2MouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setText("CREAR LANZAMIENTO");
 
-        jTextField1.setText("jTextField1");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("FECHA DE LANZAMIENTO");
+
+        BotonSingle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotonSingle.setText("SINGLE");
+
+        BotonAlbum.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotonAlbum.setText("ALBUM");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,20 +84,32 @@ public class ArtistaJFrame extends javax.swing.JFrame {
                         .addGap(313, 313, 313)
                         .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel1)
-                        .addGap(66, 66, 66)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(BotonSingle, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tituloLanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FechaLanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(165, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(234, 234, 234))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(BotonAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(234, 234, 234))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap()))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,11 +117,19 @@ public class ArtistaJFrame extends javax.swing.JFrame {
                 .addComponent(jToggleButton1)
                 .addGap(25, 25, 25)
                 .addComponent(jLabel2)
-                .addGap(83, 83, 83)
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonSingle)
+                    .addComponent(BotonAlbum))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(FechaLanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                    .addComponent(tituloLanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addComponent(jToggleButton2)
                 .addGap(56, 56, 56))
         );
@@ -131,7 +170,7 @@ public class ArtistaJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
         );
 
         pack();
@@ -140,9 +179,23 @@ public class ArtistaJFrame extends javax.swing.JFrame {
     private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
         // TODO add your handling code here:
         Mian newframe = new Mian();
-                newframe.setVisible(true);
-                this.dispose();
+        newframe.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jToggleButton1MouseClicked
+
+    private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
+        // TODO add your handling code here:
+        String title = tituloLanzamiento.getText();
+        String fecha = FechaLanzamiento.getText();
+
+        if (BotonSingle.isSelected()) {
+            Single single = new Single(title, fecha, 0);
+            lanzamiento.add(single);
+        } else if (BotonAlbum.isSelected()) {
+            Album album = new Album(title, fecha, 0);
+            lanzamiento.add(album);
+        }
+    }//GEN-LAST:event_jToggleButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,16 +231,20 @@ public class ArtistaJFrame extends javax.swing.JFrame {
             }
         });
     }
-
+    ArrayList<Lanzamiento> lanzamiento = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton BotonAlbum;
+    private javax.swing.JRadioButton BotonSingle;
+    private javax.swing.JTextField FechaLanzamiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JTextField tituloLanzamiento;
     // End of variables declaration//GEN-END:variables
 }
