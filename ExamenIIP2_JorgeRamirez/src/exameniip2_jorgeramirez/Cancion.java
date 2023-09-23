@@ -11,13 +11,13 @@ package exameniip2_jorgeramirez;
 public class Cancion {
     
     String title;
-    double duracion;
+    String duracion;
     Lanzamiento Referencia;
 
     public Cancion() {
     }
 
-    public Cancion(String title, double duracion, Lanzamiento Referencia) {
+    public Cancion(String title, String duracion, Lanzamiento Referencia) {
         this.title = title;
         this.duracion = duracion;
         this.Referencia = Referencia;
@@ -31,11 +31,11 @@ public class Cancion {
         this.title = title;
     }
 
-    public double getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
