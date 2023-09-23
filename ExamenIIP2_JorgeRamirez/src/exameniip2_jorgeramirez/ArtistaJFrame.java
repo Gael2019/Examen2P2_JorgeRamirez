@@ -45,6 +45,7 @@ public class ArtistaJFrame extends javax.swing.JFrame {
         tituloLanzamiento = new javax.swing.JTextField();
         BotonSingle = new javax.swing.JRadioButton();
         BotonAlbum = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         SalirCancion = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
@@ -107,6 +108,8 @@ public class ArtistaJFrame extends javax.swing.JFrame {
         BotonAlbum.setForeground(new java.awt.Color(0, 0, 0));
         BotonAlbum.setText("ALBUM");
 
+        jLabel8.setText("Jorge Ramire");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -138,6 +141,10 @@ public class ArtistaJFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(61, 61, 61))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +166,9 @@ public class ArtistaJFrame extends javax.swing.JFrame {
                     .addComponent(tituloLanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addComponent(jToggleButton2)
-                .addGap(56, 56, 56))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addGap(28, 28, 28))
         );
 
         jTabbedPane1.addTab("Lanzamiento", jPanel1);
@@ -471,6 +480,7 @@ public class ArtistaJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
